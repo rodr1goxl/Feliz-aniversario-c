@@ -1,0 +1,186 @@
+/* Fundo preto e centralização */
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Slider */
+.slider {
+    width: 250px;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+}
+
+/* Wrapper para transição suave */
+.slides-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+/* Imagens */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Linha roxa */
+.linha {
+    width: 90%;
+    height: 0.5px;
+    background-color: #D20DFF;
+    margin: 10px 0;
+}
+
+/* Corações caindo */
+.coracao {
+    position: fixed;
+    top: 0;
+    font-size: 24px;
+    animation: cair 10s linear forwards;
+    opacity: 1;
+}
+
+@keyframes cair {
+    0% { transform: translateY(0); opacity: 1; }
+    70% { opacity: 0.5; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Botão de música */
+.music-container {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #000000;
+    padding: 7px 25px;
+    border-radius: 50px;
+    border: 3px solid black;
+}
+
+/* Texto ao lado do botão */
+.music-text {
+    color: #D20DFFA3;
+    font-size: 20px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    margin-bottom: 10px; /* Aumentei a margem para evitar que a moldura suba */
+    margin-top: -10px; /* Pequeno espaço acima para separar do título */
+}
+
+/* Estilo do botão */
+.music-button {
+    --color: #D20DFFA3;
+    --size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+    margin-bottom: 10px; /* Aumentei a margem para evitar que a moldura suba */
+    margin-top: -10px; /* Pequeno espaço acima para separar do título */
+}
+
+.music-button .play {
+    position: absolute;
+}
+
+.music-button .pause {
+    position: absolute;
+    display: none;
+}
+
+/* Quando o botão for ativado */
+.music-button input:checked ~ .play {
+    display: none;
+}
+
+.music-button input:checked ~ .pause {
+    display: block;
+}
+
+/* Esconde o checkbox padrão */
+.music-button input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* Estilo do contador */
+#contador {
+    font-size: 20px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1px; /* Aumentei a margem para evitar que a moldura suba */
+    margin-top: 5px; /* Pequeno espaço acima para separar do título */
+}
+
+.ttt {
+    font-size: 25px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px; /* Aumentei a margem para evitar que a moldura suba */
+    margin-top: -10px; /* Pequeno espaço acima para separar do título */
+}
+
+/* Tela Inicial */
+#tela-inicial {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Estilo do botão */
+.botao {
+    background: transparent;
+    border: 2px solid #a854b2;
+    color: #a854b2;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botao:hover {
+    background-color: #a854b2;
+    color: black;
+}
